@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './header.css';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +19,7 @@ const Header = () => {
 
             <div className="hidden md:flex text-xl space-x-10 font-semibold">
                 <Link to="/movies/popular" className="text-white hover:text-red-500 cursor-pointer">POPULAR</Link>
-                <Link to="/movies/toprated" className="text-white hover:text-red-500 cursor-pointer">TOP MOVIES</Link>
+                <Link to="/movies/top_rated" className="text-white hover:text-red-500 cursor-pointer">TOP MOVIES</Link>
                 <Link to="/movies/upcoming" className="text-white hover:text-red-500 cursor-pointer">UPCOMING</Link>
             </div>
 
@@ -32,7 +31,7 @@ const Header = () => {
                 {isOpen && (
                     <div className="absolute top-16 right-0 mt-2 bg-black rounded-lg shadow-lg p-5 text-white">
                         <Link to="/movies/popular" className="block py-2 text-white hover:text-red-500 cursor-pointer">POPULAR</Link>
-                        <Link to="/movies/toprated" className="block py-2 text-white hover:text-red-500 cursor-pointer">TOP MOVIES</Link>
+                        <Link to="/movies/top_rated" className="block py-2 text-white hover:text-red-500 cursor-pointer">TOP MOVIES</Link>
                         <Link to="/movies/upcoming" className="block py-2 text-white hover:text-red-500 cursor-pointer">UPCOMING</Link>
                     </div>
                 )}

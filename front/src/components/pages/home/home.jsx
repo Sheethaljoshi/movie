@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import "./home.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from "react-router-dom";
+import MovieList from "../../movieList/movieList";
 
 
 const Home = () => {
@@ -28,25 +28,25 @@ const Home = () => {
                     {
                         popularMovies.map(movie => (
                             <Link style={{textDecoration:"none",color:"white"}} to={`/movie/${movie.id}`} >
-                                <div className="posterImage">
-                                    <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} />
+                                <div className="h-100">
+                                    <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} className="mx-auto block w-full"/>
                                 </div>
-                                <div className="posterImage__overlay">
-                                    <div className="posterImage__title">{movie ? movie.original_title: ""}</div>
-                                    <div className="posterImage__runtime">
+                                <div className="absolute p-20 bottom-0 h-70 flex flex-col w-full justify-end items-start bg-gradient-to-t from-black via-transparent to-transparent opacity-100 transition-opacity duration-300 hover:opacity-100">
+                                    <div className="font-bold text-5xl mb-1 text-left">{movie ? movie.original_title: ""}</div>
+                                    <div className="text-md mb-2">
                                         {movie ? movie.release_date : ""}
-                                        <span className="posterImage__rating">
+                                        <span className="ml-7">
                                             {movie ? movie.vote_average :""}
                                             <i className="fas fa-star" />{" "}
                                         </span>
                                     </div>
-                                    <div className="posterImage__description">{movie ? movie.overview : ""}</div>
+                                    <div className="italic text-sm mb-1 flex items-start text-left w-1/2">{movie ? movie.overview : ""}</div>
                                 </div>
                             </Link>
                         ))
                     }
                 </Carousel>
-            
+                <MovieList />
             </div>
         </>
     )
