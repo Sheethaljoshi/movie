@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState} from "react"
 import "./movieList.css"
 import { useParams } from "react-router-dom"
@@ -28,6 +29,7 @@ const MovieList = () => {
             <div className="list__cards">
                 {
                     movieList.map(movie => (
+                        // eslint-disable-next-line react/jsx-key
                         <Cards movie={movie} />
                     ))
                 }

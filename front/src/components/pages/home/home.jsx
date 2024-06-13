@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -27,6 +28,7 @@ const Home = () => {
                 >
                     {
                         popularMovies.map(movie => (
+                            // eslint-disable-next-line react/jsx-key
                             <Link style={{textDecoration:"none",color:"white"}} to={`/movie/${movie.id}`} >
                                 <div className="h-100">
                                     <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} className="mx-auto block w-full"/>
